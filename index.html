@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Who is workin' it?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            /* background-color: #fff; */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        .image-title {
+            color: #333;
+            /* font-size: 80px; */
+            font-size: 6vw;
+            margin-bottom: 20px;
+        }
+
+        .image-box {
+            /* border: 1px solid #ddd; */
+            padding: 10px;
+            background-color: white;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+        }
+        @media (max-width: 800px) {
+            .container {
+                width: 100%;
+                padding-top: 20px;
+            }
+
+            .image-title {
+                color: #333;
+                /* font-size: 80px; */
+                font-size: 8vw;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var images = ['img1.png', 'img2.jpg', 'img3.jpg','img4.png']; // replace with your image names
+            var imgElement = document.getElementById('img');
+            var currentDate = new Date();
+            var daysSinceEpoch = Math.floor(currentDate.getTime() / (1000 * 60 * 60 * 24));
+            // console.log("Days since Unix Epoch: " + daysSinceEpoch);
+            var ind = daysSinceEpoch % images.length;
+            var randomImage = images[ind];
+            imgElement.src = 'imgs/' + randomImage;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="image-title">Who is workin' it today?</h1>
+        <div class="image-box">
+            <img id='img' src="img1.jpg" alt="This person is workin' it today.">
+        </div>
+    </div>
+
+</body>
+</html>

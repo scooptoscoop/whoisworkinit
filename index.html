@@ -51,14 +51,12 @@
     </style>
     <script>
         window.onload = function() {
-            var images = ['img1.png', 'img3.jpg', 'img2.jpg','img4.png']; // replace with your image names
+            var imgs = ['imgs/img1.png','imgs/img2.jpg','imgs/img3.png','imgs/img4.jpg','imgs/img5.jpg','imgs/img6.jpg','imgs/img7.jpg','imgs/img8.png','imgs/img9.png'];
             var imgElement = document.getElementById('img');
             var currentDate = new Date();
-            var daysSinceEpoch = Math.floor(currentDate.getTime() / (1000 * 60 * 60 * 24));
-            // console.log("Days since Unix Epoch: " + daysSinceEpoch);
-            var ind = daysSinceEpoch % images.length;
-            var randomImage = images[ind];
-            imgElement.src = 'imgs/' + randomImage;
+            var daysSinceEpoch = Math.floor(currentDate.getTime() / (1000 * 60 * 60 * 24)) - 19726;
+            var ind = daysSinceEpoch % imgs.length;
+            imgElement.src = imgs[ind];
         }
     </script>
 </head>

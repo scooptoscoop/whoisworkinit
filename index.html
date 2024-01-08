@@ -51,12 +51,13 @@
     </style>
     <script>
         window.onload = function() {
-            var imgs = ['imgs/img1.png','imgs/img2.jpg','imgs/img3.png','imgs/img4.jpg','imgs/img5.jpg','imgs/img6.jpg','imgs/img7.jpg','imgs/img8.png','imgs/img9.png'];
+            var imgCount = 14; // rep
             var imgElement = document.getElementById('img');
             var currentDate = new Date();
             var daysSinceEpoch = Math.floor(currentDate.getTime() / (1000 * 60 * 60 * 24)) - 19726;
-            var ind = daysSinceEpoch % imgs.length;
-            imgElement.src = imgs[ind];
+            var ind = (daysSinceEpoch % imgCount) + 1;
+            var paddedInd = String(ind).padStart(4, '0');
+            imgElement.src = `imgs/img${paddedInd}.jpg`;
         }
     </script>
 </head>

@@ -51,13 +51,17 @@
     </style>
     <script>
       window.onload = function () {
-        var imgCount = 16; // rep
+        var imgCount = 18; // rep
         var imgElement = document.getElementById("img");
         var currentDate = new Date();
         var daysSinceEpoch =
           Math.floor(currentDate.getTime() / (1000 * 60 * 60 * 24)) - 19726;
+        shift = 18 - 6 
+        // adjust to force a certain picture
+        daysSinceEpoch += shift
         var ind = (daysSinceEpoch % imgCount) + 1;
         var paddedInd = String(ind).padStart(4, "0");
+        console.log(paddedInd)
         imgElement.src = `imgs/img${paddedInd}.jpg`;
       };
     </script>
